@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agenda de Contactos</title>
+</head>
+<body>
+    <h1>Agenda de Contactos</h1>
+
+    <!-- Formulario de búsqueda -->
+    <form action="/buscar" method="post">
+        <label>Buscar por DNI:</label>
+        <input type="text" name="dni" required>
+        <input type="submit" value="Buscar">
+    </form>
+
+    <!-- Grilla completa de la tabla agenda -->
+    <table border="1">
+        <tr>
+            <th>DNI</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Calle</th>
+            <th>Número</th>
+            <th>Código Postal</th>
+            <th>Email</th>
+            <th>Teléfono</th>
+            <th>Fecha Nacimiento</th>
+            <th>Gastos Mensuales</th>
+        </tr>
+        {% for contacto in contactos %}
+        <tr>
+            <td>{{ contacto[0] }}</td>
+            <td>{{ contacto[1] }}</td>
+            <td>{{ contacto[2] }}</td>
+            <td>{{ contacto[3] }}</td>
+            <td>{{ contacto[4] }}</td>
+            <td>{{ contacto[5] }}</td>
+            <td>{{ contacto[6] }}</td>
+            <td>{{ contacto[7] }}</td>
+            <td>{{ contacto[8] }}</td>
+            <td>{{ contacto[9] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <p><a href="/nuevo">Agregar nuevo contacto</a></p>
+</body>
+</html>

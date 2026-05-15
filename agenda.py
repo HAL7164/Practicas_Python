@@ -2,7 +2,7 @@ import psycopg2
 from psycopg2 import sql
 
 # ⚠️ Cambiá estos valores por los de tu conexión Supabase/PostgreSQL
-DB_URL = "postgresql://postgres:TU_PASSWORD@TU_HOST:5432/postgres"
+DB_URL = "postgresql://postgres:Hal1369262085#@db.krxuuhewwmqewypguzbt.supabase.co:5432/postgres"
 
 # Conexión a la base
 conn = psycopg2.connect(DB_URL)

@@ -1,0 +1,1 @@
+cp C:\Users\hecto\Desktop\Practicas Python\clients C:\Users\hecto\Desktop\Practicas Python\txt\clients

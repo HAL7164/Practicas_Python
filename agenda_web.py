@@ -44,11 +44,10 @@ def agregar():
         INSERT INTO agenda (
             dni, nombre, apellido, calle, numero, codigo_postal,
             email, telefono, fecha_nacimiento, gastos_mensuales
-        )
-        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-    """, (
-        dni, nombre, apellido, calle, numero, codigo_postal,
-        email, telefono, fecha_nacimiento, gastos_mensuales
+            )
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""", (
+            dni, nombre, apellido, calle, numero, codigo_postal,
+            email, telefono, fecha_nacimiento, gastos_mensuales
     ))
     conn.commit()
     cur.close()

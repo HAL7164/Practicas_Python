@@ -9,7 +9,7 @@ def get_conn():
     )
 
 # 📌 Listar todos los contactos
-@app.route("/")
+@app.route("/listar")
 def listar():
     conn = get_conn()
     cur = conn.cursor()
@@ -52,7 +52,7 @@ def agregar():
     conn.commit()
     cur.close()
     conn.close()
-    return redirect("/")
+    return redirect("/listar")
 
 # 📌 Buscar contacto por DNI
 @app.route("/buscar", methods=["POST"])
@@ -104,7 +104,7 @@ def editar(dni):
     conn.commit()
     cur.close()
     conn.close()
-    return redirect("/")
+    return redirect("/listar")
 
 if __name__ == "__main__":
     app.run(debug=True)

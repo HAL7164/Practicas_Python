@@ -16,7 +16,7 @@
     {% endif %}
     </h1>
     
-    <form action="/editar" method="POST">
+    <form action="/editar/{{ contacto[0] }}" method="POST">
         
         <label>DNI:</label>
         <input type="text" name="dni" value="{% if contacto %}{{ contacto[0] }}{% endif %}" readonly><br>
@@ -49,10 +49,14 @@
         <input type="number" step="0.01" name="gastos_mensuales" value="{% if contacto %}{{ contacto[9] }}{% endif %}"><br>
 
         <button type="submit">Actualizar</button>
-        <button type="submit" formaction="/eliminar">Eliminar</button>
-    
+        <!-- button type="submit" formaction="/eliminar">Eliminar</button> -->
     </form>
 
+    <form action="/eliminar/{{ contacto[0] }}" method="post" 
+            onsubmit="return confirm('¿Seguro que quieres eliminar este contacto?');">
+            <input type="submit" value="Eliminar">
+    </form>
+        
     <p><a href="/listar">Volver a la lista</a></p>
     
 </body>

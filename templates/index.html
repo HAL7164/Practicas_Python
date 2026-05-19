@@ -5,17 +5,49 @@
     <title>Formulario Contacto</title>
 </head>
 <body>
-    <h1>{% if contacto %}Editar Contacto{% else %}Agregar Contacto{% endif %}</h1>
+    <h1>{% if contacto %}Editar Contacto{% else %}Agregar Contacto{% endif %}
+        
+        {% if errores %}
+            <span style="color: red; font-size: 0.6em; font-weight: normal; margin-left: 20px; vertical-align: middle;">
+            {# 2. Extraemos y mostramos el primer mensaje de error disponible #}
+            ⚠️ {{ errores.values() | first }}
+            </span>
+        {% endif %}
+    </h1>
+
     <form action="{% if contacto %}/editar/{{ contacto[0] }}{% else %}/agregar{% endif %}" method="post">
+        
         <label>DNI:</label>
-        <input type="text" name="dni" value="{% if contacto %}{{ contacto[0] }}{% endif %}" {% if contacto %}readonly{% endif %}><br>
+        <input type="text" name="dni" 
+        value="{% if contacto %}{{ contacto[0] }}{% endif %}" 
+                {% if contacto %}readonly{% endif %}>
+        <br>
+    <form action="{% if contacto %}/editar/{{ contacto[0] }}{% else %}/agregar{% endif %}" method="post">
+        
+        <label>DNI:</label>
+        <input type="text" name="dni" 
+        value="{% if contacto %}{{ contacto[0] }}{% endif %}" 
+                {% if contacto %}readonly{% endif %}>
+        <br>
 
         <label>Nombre:</label>
         <!-- inputtype="text" name="nombre" value="{% if contacto %}{{ contacto[1] }}{% endif %}" required><br> -->
-        <input type="text" name="nombre" value="{% if contacto %}{{ contacto[1] }}{% endif %}" ><br>
-
+        <input type="text" name="nombre" value="{% if contacto %}{{ contacto[1] }}{% endif %}" >
+        {% if error_nombre %}
+            <span style="color: #d93025; font-size: 13px; font-family: sans-serif; margin-left: 10px; font-weight: 500; display: inline-flex; align-items: center; gap: 4px;">
+                    ⚠️ {{ error_nombre }}
+            </span>
+        {% endif %}
+        <br>
+       
         <label>Apellido:</label>
-        <input type="text" name="apellido" value="{% if contacto %}{{ contacto[2] }}{% endif %}" required><br>
+        <input type="text" name="apellido" value="{% if contacto %}{{ contacto[2] }}{% endif %}" >
+        {% if error_Apellido %}
+            <span style="color: #d93025; font-size: 13px; font-family: sans-serif; margin-left: 10px; font-weight: 500; display: inline-flex; align-items: center; gap: 4px;">
+                    ⚠️ {{ error_Apellido }}
+            </span>
+        {% endif %}
+        <br>
 
         <label>Calle:</label>
         <input type="text" name="calle" value="{% if contacto %}{{ contacto[3] }}{% endif %}"><br>

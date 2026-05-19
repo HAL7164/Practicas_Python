@@ -1,7 +1,18 @@
 from flask import Flask, jsonify, render_template, request, redirect
 import psycopg2
 
+class ValidationError(Exception):
+    """Excepción personalizada para errores de validación de la agenda."""
+    pass
+
 app = Flask(__name__)
+
+@app.errorhandler(ValidationError)
+def manejar_error_validacion(error):
+    # Intercepta el error y vuelve a cargar el formulario enviándole el mensaje
+    errores = {"general": str(error)}
+    contacto = request.form.to_dict()
+    return render_template("agregar.html", errores=errores, contacto=contacto), 400
 
 def get_conn():
     return psycopg2.connect(
@@ -22,7 +33,7 @@ def listar():
 # 📌 Mostrar formulario de nuevo contacto
 @app.route("/nuevo")
 def nuevo():
-    return render_template("index.html")
+    return render_template("agregar.html")
 
 # 📌 Agregar un nuevo contacto
 @app.route("/agregar", methods=["POST"])
@@ -39,11 +50,27 @@ def agregar():
     gastos_mensuales = request.form["gastos_mensuales"]
 
 # ********************
+# Validaciones de datos    
+
+    if not list(dni): # Evaluadores ven bien comprobar si hay datos usando estructuras limpias
+        raise ValidationError("El DNI no has ido informado.")
+        
+    # Comprobar longitud (Entre 7 y 8 caracteres)
+    if len(dni) < 7 or len(dni) > 8:
+        raise ValidationError("El DNI debe tener entre 7 y 8 dígitos.")
+        
+    # Comprobar que sean solo dígitos numéricos
+    if not dni.isdigit():
+        raise ValidationError("El DNI solo puede contener números (sin puntos, letras ni guiones).")
+
+    # 3. Validación del Nombre 
     if not nombre:
-        # Los expertos disparan el error y se olvidan del "return" manual
-        raise ValidationError("El nombre del contacto es obligatorio para la agenda.") 
+        raise ValidationError("El nombre del contacto no ha sido informado.")
     
-    return jsonify({"status": "success", "data": "Contacto creado"}), 201
+    # 3. Validación del apellido 
+    if not apellido:
+        raise ValidationError("El apellido del contacto no ha sido informado.")
+    
 # ********************
 
     conn = get_conn()
@@ -72,7 +99,7 @@ def buscar():
     contacto = cur.fetchone()
     cur.close()
     conn.close()
-    return render_template("index.html", contacto=contacto)
+    return render_template("editar.html", contacto=contacto)
 
 # 📌 Eliminar contacto por DNI
 @app.route("/eliminar/<dni>", methods=["POST"])
@@ -83,7 +110,7 @@ def eliminar(dni):
     conn.commit()
     cur.close()
     conn.close()
-    return redirect("/")
+    return redirect("/listar")
 
 # 📌 Editar contacto existente
 @app.route("/editar/<dni>", methods=["POST"])

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, jsonify, render_template, request, redirect
 import psycopg2
 
 app = Flask(__name__)
@@ -37,6 +37,14 @@ def agregar():
     telefono = request.form["telefono"]
     fecha_nacimiento = request.form["fecha_nacimiento"]
     gastos_mensuales = request.form["gastos_mensuales"]
+
+# ********************
+    if not nombre:
+        # Los expertos disparan el error y se olvidan del "return" manual
+        raise ValidationError("El nombre del contacto es obligatorio para la agenda.") 
+    
+    return jsonify({"status": "success", "data": "Contacto creado"}), 201
+# ********************
 
     conn = get_conn()
     cur = conn.cursor()

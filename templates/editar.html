@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Formulario Contacto</title>
 </head>
+
 <body>
-    <h1>{% if contacto %}Editar Contacto{% else %}Agregar Contacto{% endif %}</h1>
-    <form action="{% if contacto %}/editar/{{ contacto[0] }}{% else %}/agregar{% endif %}" method="post">
+    <h1>
+    Editar Contacto
+    {% if errores %}
+        <span style="color: red; font-size: 0.6em; font-weight: normal; margin-left: 20px; vertical-align: middle;">
+            ⚠️ {{ errores.values() | first }}
+        </span>
+    {% endif %}
+    </h1>
+    
+    <form action="/editar" method="POST">
+        
         <label>DNI:</label>
-        <input type="text" name="dni" value="{% if contacto %}{{ contacto[0] }}{% endif %}" {% if contacto %}readonly{% endif %}><br>
-
+        <input type="text" name="dni" value="{% if contacto %}{{ contacto[0] }}{% endif %}" readonly><br>
+        
         <label>Nombre:</label>
-        <!-- inputtype="text" name="nombre" value="{% if contacto %}{{ contacto[1] }}{% endif %}" required><br> -->
         <input type="text" name="nombre" value="{% if contacto %}{{ contacto[1] }}{% endif %}" ><br>
-
+       
         <label>Apellido:</label>
-        <input type="text" name="apellido" value="{% if contacto %}{{ contacto[2] }}{% endif %}" required><br>
+        <input type="text" name="apellido" value="{% if contacto %}{{ contacto[2] }}{% endif %}" ><br>
 
         <label>Calle:</label>
         <input type="text" name="calle" value="{% if contacto %}{{ contacto[3] }}{% endif %}"><br>
@@ -38,16 +48,12 @@
         <label>Gastos Mensuales:</label>
         <input type="number" step="0.01" name="gastos_mensuales" value="{% if contacto %}{{ contacto[9] }}{% endif %}"><br>
 
-        <input type="submit" value="{% if contacto %}Actualizar{% else %}Guardar{% endif %}">
+        <button type="submit">Actualizar</button>
+        <button type="submit" formaction="/eliminar">Eliminar</button>
+    
     </form>
-
-    {% if contacto %}
-    <!-- Botón Eliminar solo en edición -->
-    <form action="/eliminar/{{ contacto[0] }}" method="post" onsubmit="return confirm('¿Seguro que quieres eliminar este contacto?');">
-        <input type="submit" value="Eliminar">
-    </form>
-    {% endif %}
 
     <p><a href="/listar">Volver a la lista</a></p>
+    
 </body>
 </html>

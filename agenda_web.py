@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, render_template, request, redirect
+from flask import Flask, render_template, request, redirect
 import psycopg2
 
 class ValidationError(Exception):

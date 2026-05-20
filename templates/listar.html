@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Agenda de Contactos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <h1>Agenda de Contactos</h1>
@@ -12,7 +13,14 @@
         <label>Buscar por DNI:</label>
         <input type="text" name="dni" required>
         <input type="submit" value="Buscar">
+
+        <a href="/nuevo" style="text-decoration: none;">
+            <button type="button">Agregar contacto</button>
+        </a>
+
     </form>
+
+    
 
     <!-- Grilla completa de la tabla agenda -->
     <table border="1">
@@ -44,6 +52,7 @@
         {% endfor %}
     </table>
 
-    <p><a href="/nuevo">Agregar nuevo contacto</a></p>
+    <!--<p><a href="/nuevo">Agregar nuevo contacto</a></p> -->
+
 </body>
 </html>

@@ -1,8 +1,11 @@
 body {
     font-family: Arial, sans-serif;
     color: white;
+    background-image: url('fondo.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 h1 {
     text-align: center;
@@ -14,5 +17,26 @@ table {
 }
 th, td {
     border: 1px solid white;
-    padding: 8px;
+    padding: 4px;
+    font-size: 13px;
+}
+form div, form p, .form-group {
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+}
+
+label {
+    display: inline-block;
+    width: 150px; /* Altera este número para darle más o menos espacio al texto */
+    text-align: left;
+}
+input[type="submit"] {
+    width: auto !important;         /* Quita el ancho fijo de 250px */
+    padding: 3px 8px;              /* Ajusta el relleno interno para que sea compacto */
+    border: 1px solid #ccc;         /* Le da el mismo borde gris fino */
+    background-color: #f0f0f0;      /* Color de fondo clásico de botón */
+    border-radius: 3px;             /* Bordes sutilmente redondeados */
+    cursor: pointer;                /* Cambia el cursor al pasar por encima */
+    font-size: 13px;                /* Mismo tamaño de letra */
 }

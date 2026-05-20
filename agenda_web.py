@@ -73,7 +73,21 @@ def agregar():
     
 # ********************
 
+# 1. Verificar si el DNI ya existe en la tabla agenda
+    
     conn = get_conn()
+
+# verificar duplicidad en la BD
+    cursor = conn.cursor()
+    cursor.execute("SELECT dni FROM agenda WHERE dni = %s", (dni,))
+    contacto_existente = cursor.fetchone()
+
+    if contacto_existente:
+        # Si ya existe, puedes usar flash() para mandar un aviso al HTML
+        raise ValidationError("El DNI ingresado ya se encuentra registrado.")
+        return redirect("/agregar")  # Te devuelve al formulario de carga
+
+    
     cur = conn.cursor()
     cur.execute("""
         INSERT INTO agenda (

@@ -1,0 +1,139 @@
+a) Puesto de Desarrollador Python en BAUFEST
+
+Baufest
+Desarrollador Python Jr/Ssr — Backend, APIs y GCP
+Baufest · Mar del Plata, Provincia de Buenos Aires · a través de Recruit.net
+hace 22 horas
+Tiempo completo
+No se menciona un título académico
+Postularse en Recruit.net
+Descripción del trabajo
+En Baufest, nuestra misión es mejorar la vida con tecnología, generando un impacto positivo en la sociedad. Por ello, buscamos un/a Jr/Ssr Python Developer para sumarse a nuestro equipo de profesionales.
+• Implementar backend en Python para lógica de negocio y adaptación a APIs.
+• Diseñar y desarrollar APIs y endpoints utilizando FastAPI.
+• Consumir APIs gobernadas y manejar estados/errores de forma robusta.
+• Crear pruebas (unitarias e integración) y apoyar estabilización.
+• Colaborar con el equipo frontend para asegurar integración end-to-end.
+• Python avanzado: Tipado estricto, operaciones asincronas, concurrencia.
+• FastAPI profundo: Organización de proyecto por dominio, dependency injection, middleware, manejo de excepciones.
+• Diseño de APIs hands-on: Contratos OpenAPI, versionado de endpoints, error model estructurado.
+• Integración con APIs externas y resiliencia: Manejo de errores, retries, circuit breaker y degradación graceful.
+• Observabilidad: Logging, trace, integración con Cloud Logging y Cloud Trace.
+• GCP operativo: Despliegue en GCP, IAM, Secret Manager, variables de entorno
+
+Requisitos deseables:
+• Experiencia con MuleSoft o plataforma equivalente de integración enterprise.
+#J-18808-Ljbffr
+
+(fin del puesto ofrecido)
+
+
+
+b) mi ultimo CV
+
+Curriculum Vitae
+Hector Angel Lombardo
+Email : Hector_Lombardo@hotmail.com Celular : 15-3101-5012
+
+Estudios
+1983 Instituto ILVEM
+Curso de Diagramación y Programación
+1980 E.S.M.A. Escuela de Suboficiales de Mecánica de la Armada
+Curso de Electrónica
+1977 - 1979 E.N.E.T. Nro. 16 ESPAÑA
+
+Formación
+2004 SAP XIOMA S.A.
+Introducción a ABAP/4
+Programación de Reportes
+Programación de Dialogo
+Programación de Interfaces
+Introducción a la Tecnología SAP
+Administración BASIS
+Gestión de Software y Transporte
+Conceptos de Autorización
+2001 ORACLE Consultora RYACO
+DISCOVERER
+SQL PLUS
+PL-SQL
+FORMS V.5.
+2001 Visual Basic 6 Consultora Leviminond
+Básico de Visual Basic 6
+1999 SAP Consultora SAP región Sur
+Introducción a SAP R/3 (SAP50)
+Development Workbench
+Introducción a ABAP/4 (BC400)
+Programación de Reportes (BC405)
+Programación de Dialogo (BC410)
+Programación de Interfaces II (BC420)
+1998 Windows NT Instituto New Horizons
+Administración de Redes Windows NT.
+
+Idiomas Inglés y Francés (Lectura, escritura y conversación)
+
+Experiencia en Tecnologías
+Equipos : HP, COMPAQ, IBM AS400, IBM S36, BURROUGHS, WANG VS90.
+Lenguajes : ABAP4, RPG II, RPG 400, OCL, CL, SQL PLUS, PL/SQL,
+RPG LATICCE, COBOL.
+
+Trabajos Anteriores
+
+ATOS Argentina Consultora Informatica
+Fecha de Ingreso : 25/03/2008 – 31/03/2025
+
+Puesto : Analista Tecnico
+
+Tareas :
+-Gestión integral de tickets de Incidentes,
+Cambios y Requerimientos en entornos productivos SAP, bajo metodología ITIL.
+-Análisis, diseño y desarrollo de soluciones en SAP ABAP,
+incluyendo reportes, mejoras y correcciones evolutivas.
+-Desarrollo y mantenimiento de programas ABAP:
+Reportes ALV (clásico y OO).
+Enhancements, User Exits y BADIs.
+Formularios SmartForms y SAPscript.
+Análisis y depuración de código mediante debugging ABAP.
+Optimización de performance (uso de SELECT eficientes, índices, tablas internas).
+-Soporte técnico a usuarios funcionales y trabajo colaborativo con equipos MM, SD y FI.
+-Transporte de órdenes entre ambientes (DEV / QAS / PRD).
+-Documentación técnica y funcional de desarrollos.
+Sistemas : MAINFRAME MVS.
+PSA Peugeot Citroen S.A ___ Automotriz
+Fecha de Ingreso : 25/03/2008 – 31/05/2018
+Puesto : Líder técnico
+Tareas :
+-Auditoría y control de calidad de programas desarrollados en SAP ABAP (ERP SAP R/3).
+Revisión de código conforme a estándares SAP y buenas prácticas de desarrollo.
+-Desarrollo de herramientas internas en Web Dynpro ABAP
+para el control masivo de calidad de código.
+-Implementación de SAP Code Inspector, ampliando su estándar mediante desarrollos propios.
+-Creación de base de datos y reportes estadísticos para seguimiento de calidad y métricas de desarrollo.
+-Capacitación y mentoring de trainees ABAP, incluyendo buenas prácticas, debugging y performance.
+-Soporte técnico a equipos de desarrollo y participación en definición de lineamientos técnicos.
+Sistemas : SAP FI y MM
+
+SONY BMG Music Entertainment Argentina S.A ___ Discográfica
+Fecha de Ingreso : 20/03/1995 – 31/11/2007
+	Puesto : Analista Programador
+Tareas : AS400 : Desarrollo y Mantenimiento de Sistemas.
+	SAP : Modulos FI y AR,
+	Modificación de Customizing, Autorizaciones.
+	Desarrollo de BI,
+	Desarrollo Reportes estándar modificados y nuevos, ALVs
+	Tareas de Basis, Aplicación de transportes,
+	Modificación de Formularios.
+	Administración de Red NT, Win 2000 y 2003, y soporte a usuarios.
+	Sistemas : Ventas, Pedidos, Facturación, Contabilidad, Clientes,
+	Proveedores, Tesorería.
+
+Datos Personales
+	Documento : D.N.I. 16.926.136
+	Nacionalidad : Argentino.
+	Fecha de Nacimiento : 7 de Enero de 1964.
+	Estado civil : Divorciado.
+	Localidad : Barrio Aeroparque, Mar del Plata.
+
+(fin de mi ultimo CV)
+
+
+En relacion a mis practicas en las que me diste soporte para desarrollar Agenda_web y a esta oferta de trabajo que ves pegué aqui, tambien podes tomar en cuenta mi CV que también te adjunte aquí, quiero que me armes un CV para poder postularme. hace lo que consideres conveniente, y si necesitas preguntarme algo hacelo antes de concluir.

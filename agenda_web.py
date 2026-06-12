@@ -1,5 +1,11 @@
 from flask import Flask, render_template, request, redirect
+from dotenv import load_dotenv
 import psycopg2
+import os
+
+load_dotenv()
+
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 class ValidationError(Exception):
     """Excepción personalizada para errores de validación de la agenda."""
@@ -15,11 +21,14 @@ def manejar_error_validacion(error):
     return render_template("agregar.html", errores=errores, contacto=contacto), 400
 
 def get_conn():
-    return psycopg2.connect(
-        "postgresql://postgres:Hal1369262085#@db.krxuuhewwmqewypguzbt.supabase.co:5432/postgres"
-    )
+    return psycopg2.connect(DATABASE_URL)
 
 # 📌 Listar todos los contactos
+
+@app.route("/")
+def inicio():
+    return redirect("/listar")
+
 @app.route("/listar")
 def listar():
     conn = get_conn()
@@ -76,8 +85,6 @@ def agregar():
 # 1. Verificar si el DNI ya existe en la tabla agenda
     
     conn = get_conn()
-
-# verificar duplicidad en la BD
     cursor = conn.cursor()
     cursor.execute("SELECT dni FROM agenda WHERE dni = %s", (dni,))
     contacto_existente = cursor.fetchone()
@@ -106,13 +113,19 @@ def agregar():
 # 📌 Buscar contacto por DNI
 @app.route("/buscar", methods=["POST"])
 def buscar():
+
     dni = request.form["dni"]
     conn = get_conn()
     cur = conn.cursor()
+
     cur.execute("SELECT * FROM agenda WHERE dni = %s", (dni,))
     contacto = cur.fetchone()
     cur.close()
     conn.close()
+
+    if contacto is None:
+        raise ValidationError("El contacto informado no ha sido registrado.")
+
     return render_template("editar.html", contacto=contacto)
 
 # 📌 Eliminar contacto por DNI
